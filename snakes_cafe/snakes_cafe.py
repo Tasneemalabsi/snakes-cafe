@@ -34,12 +34,32 @@ Unicorn Tears
 ** What would you like to order? **
 ***********************************
 """)
-menu = ["Wings","Cookies","Spring Rolls","Salmon","Steak","Meat Tornado","A Literal Garden","Ice Cream","Cake","Pie","Coffee","Tea","Unicorn Tears"]
-for i in range(len(menu)):
-    order = input(">")
-    count = 0
-    if order == menu[i]:
-        count = count+1
-        print(f"**{count} order of {menu[i]} have been added to your meal **")
+menu = {
+    'wings' : 0,
+    'cookies' : 0,
+    'spring rolls' : 0,
+    'salmon' : 0,
+    'steak' : 0,
+    'meat tornado' : 0,
+    'a literal garden' : 0,
+    'ice cream' : 0,
+    'cake' : 0,
+    'pie' : 0,
+    'coffee' : 0,
+    'tea' : 0,
+    'unicorn tears' : 0
+}
+
+order = input("what's your order ?  ")
+
+while order != "quit":
+    
+    if order in menu:
+        menu[order] += 1
+        for i in menu:
+            if menu[order] >= 1:
+                print(f'**{menu[order]} order of {order} have been added to your meal **')
     else:
-        continue    
+        print("your order is not in the menu, order again please ")
+        order= input("what's your order ?  ")
+
