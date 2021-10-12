@@ -50,15 +50,15 @@ menu = {
     'unicorn tears': 0
 }
 
-order = input("what's your order ?  ")
+order = input("> ").lower()
 
-while order != "quit":
+while order.lower() != "quit":
 
     if order in menu:
         
         menu[order] += 1
-        print(f'**{menu[order]} order of {order} have been added to your meal **')
+        print(f'**{menu[order]} order of {order.lower()} have been added to your meal **')
     else:
         print("your order is not in the menu, order again please ")
-    order = input("what's your order ?  ")
+    order = input("> ").lower()
 
